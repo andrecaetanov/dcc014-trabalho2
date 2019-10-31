@@ -3,7 +3,6 @@ from util import NUM_NODES, read_file, get_initial_state, open_nodes, calc_heuri
 
 def pathfinding():
     open_states = []
-    closed_states = []
 
     initial_state = get_initial_state(nodes)
     open_states.append(initial_state)
@@ -16,7 +15,6 @@ def pathfinding():
 
         open_states = open_nodes(nodes, current_state, open_states)
 
-        closed_states.append(current_state)
         open_states.pop(0)
         open_states.sort(key=lambda x: (x.distance + x.node.h))
 

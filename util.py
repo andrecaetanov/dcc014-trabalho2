@@ -3,7 +3,7 @@ from copy import deepcopy
 
 
 FILE_PATH = 'burma14.tsp'
-NUM_NODES = 10
+NUM_NODES = 7
 INDEX_INITIAL_NODE = 0
 
 
@@ -70,7 +70,6 @@ def open_nodes(nodes, current_state, open_states):
     for node in nodes:
         if not current_state.nodes_in_path[node.index]:
             distance = get_distance(current_state.node, node)
-            print("{} - {}: {}".format(current_state.node.index, node.index, distance))
             current_distance = distance + current_state.distance
 
             path = deepcopy(current_state.path)
